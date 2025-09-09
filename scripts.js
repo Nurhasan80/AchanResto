@@ -12,13 +12,17 @@ function openOrderModal(productName, productPrice) {
     
     // Set harga dan total awal
     quantityInput.dataset.price = productPrice;
+    quantityInput.value = 5; // Set default value ke 5
     updateTotal();
     
     // Tampilkan modal
     modal.style.display = 'block';
     
-    // Reset form
-    document.getElementById('orderForm').reset();
+    // Reset form lainnya
+    document.getElementById('name').value = '';
+    document.getElementById('phone').value = '';
+    document.getElementById('address').value = '';
+    document.getElementById('notes').value = '';
     document.getElementById('btnSubmit').disabled = true;
     
     // Tambahkan event listener untuk validasi form
@@ -34,20 +38,21 @@ function closeModal() {
 function updateTotal() {
     const quantityInput = document.getElementById('quantity');
     const price = parseInt(quantityInput.dataset.price);
-    const quantity = parseInt(quantityInput.value) || 5;
+    const quantity = parseInt(quantityInput.value) || 0;
     
     // Validasi minimal pembelian
     if (quantity < 5) {
-        alert('Pembelian minimal 5 box');
-        quantityInput.value = 5;
+        document.getElementById('total').value = 'Minimal pembelian 5 box';
+        document.getElementById('btnSubmit').disabled = true;
         return;
     }
     
     const total = price * quantity;
     document.getElementById('total').value = `Rp ${formatRupiah(total)}`;
+    validateForm();
 }
 
-// Fungsi untuk memformat angka menjadi format Rupiah (DIPERBAIKI)
+// Fungsi untuk memformat angka menjadi format Rupiah
 function formatRupiah(angka) {
     // Pastikan angka adalah number
     const num = parseInt(angka);
@@ -65,9 +70,10 @@ function validateForm() {
     const phone = document.getElementById('phone').value.trim();
     const address = document.getElementById('address').value.trim();
     const quantity = document.getElementById('quantity').value;
+    const total = document.getElementById('total').value;
     
-    // Validasi minimal pembelian
-    if (parseInt(quantity) < 5) {
+    // Validasi minimal pembelian dan format total
+    if (parseInt(quantity) < 5 || total === 'Minimal pembelian 5 box') {
         document.getElementById('btnSubmit').disabled = true;
         return;
     }
@@ -80,20 +86,27 @@ function validateForm() {
     }
 }
 
-// Fungsi untuk mengirim pesan ke WhatsApp (DIPERBAIKI)
+// Fungsi untuk mengirim pesan ke WhatsApp
 function sendToWhatsApp(e) {
     e.preventDefault();
     
+    const quantity = parseInt(document.getElementById('quantity').value);
+    
+    // Validasi akhir sebelum kirim
+    if (quantity < 5) {
+        alert('Pembelian minimal 5 box!');
+        return;
+    }
+    
     const productName = document.getElementById('modalProductName').textContent;
     const productPrice = document.getElementById('modalProductPrice').textContent.replace('Harga: Rp ', '').replace(/\./g, '');
-    const quantity = document.getElementById('quantity').value;
     const total = document.getElementById('total').value.replace('Rp ', '').replace(/\./g, '');
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
     const address = document.getElementById('address').value;
     const notes = document.getElementById('notes').value;
     
-    // Format pesan WhatsApp (DIPERBAIKI - format Rupiah yang benar)
+    // Format pesan WhatsApp
     let message = `Halo, saya ingin memesan catering dari Dapur Pangeran.%0A%0A`;
     message += `*Detail Pesanan:*%0A`;
     message += `Produk: ${productName}%0A`;
@@ -130,8 +143,18 @@ document.querySelectorAll('.order-btn').forEach(button => {
     });
 });
 
-// Event listener untuk perubahan jumlah beli
-document.getElementById('quantity').addEventListener('change', updateTotal);
+// Event listener untuk perubahan jumlah beli (real-time update)
+document.getElementById('quantity').addEventListener('input', function() {
+    const quantity = parseInt(this.value) || 0;
+    
+    if (quantity < 5) {
+        // Tampilkan pesan error secara real-time
+        document.getElementById('total').value = 'Minimal pembelian 5 box';
+        document.getElementById('btnSubmit').disabled = true;
+    } else {
+        updateTotal();
+    }
+});
 
 // Event listener untuk submit form
 document.getElementById('orderForm').addEventListener('submit', sendToWhatsApp);
@@ -143,6 +166,8 @@ window.addEventListener('click', function(event) {
         closeModal();
     }
 });
+
+// ========== FUNGSI LAINNYA (tetap sama) ==========
 
 function toggleMenu() {
     const navLinks = document.getElementById("navLinks");
@@ -195,36 +220,26 @@ function changeSlide() {
     currentSlide = (currentSlide + 1) % totalSlides;
     slides[currentSlide].classList.add("active");
 }
-setInterval(changeSlide, 4000); // Ganti foto setiap 4 detik
+setInterval(changeSlide, 4000);
 
 document.getElementById("waForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    // Ambil data
     const nama = document.getElementById("nama").value.trim();
     const telepon = document.getElementById("telepon").value.trim();
     const email = document.getElementById("email").value.trim();
     const pesan = document.getElementById("pesan").value.trim();
 
-    // Validasi semua harus diisi
     if (!nama || !telepon || !email || !pesan) {
         alert("Harap isi semua kolom!");
         return;
     }
 
-    // Nomor WhatsApp tujuan (gunakan format internasional tanpa + dan 0 di depan)
-    const nomorWA = "6287781935781"; // Ganti dengan nomor penjual
-
-    // Format pesan
+    const nomorWA = "6287781935781";
     const text = `Halo, saya *${nama}*%0ANo. Telp: ${telepon}%0AEmail: ${email}%0A%0A${pesan}`;
 
-    // Notifikasi sukses
     alert("Pesan Anda siap dikirim via WhatsApp!");
-
-    // Buka WhatsApp
     window.open(`https://wa.me/${nomorWA}?text=${text}`, "_blank");
-
-    // Bersihkan form
     document.getElementById("waForm").reset();
 });
 
@@ -291,10 +306,8 @@ function loadKomentar() {
     const local = JSON.parse(localStorage.getItem('komentarData')) || [];
     const semuaKomentar = [...komentarManual, ...local];
 
-    // Batasi jumlah komentar tampil (terbaru di bawah)
     const tampilKomentar = semuaKomentar.slice(-komentarLimit);
     tampilKomentar.forEach((item, index) => {
-        // Hitung indeks asli di localStorage dengan mengurangi jumlah komentar manual
         const localIndex = index - komentarManual.length;
         tampilkanKomentar(item, localIndex, !item.manual);
     });
@@ -447,16 +460,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("randomProductContainer");
 
     if (allProducts.length > 0 && container) {
-        // Acak urutan produk
         const shuffled = allProducts.sort(() => 0.5 - Math.random());
-
-        // Ambil minimal 3 produk acak
         const selected = shuffled.slice(0, 3);
 
         selected.forEach(prod => {
             const cloned = prod.cloneNode(true);
 
-            // === ORDER button re-attach ===
             const orderBtn = cloned.querySelector(".order-btn");
             if (orderBtn) {
                 orderBtn.addEventListener("click", function () {
@@ -466,7 +475,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
 
-            // === DETIL button re-attach ===
             const detailBtn = cloned.querySelector(".detail-btn");
             if (detailBtn) {
                 detailBtn.addEventListener("click", function () {
