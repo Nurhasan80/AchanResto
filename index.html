@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css">
+  <title>Achan Resto</title>
+</head>
+<body>
+  
+  <!-- Navigasi star -->
+  <nav>
+    <div class="nav-title">
+      <img src="img/logo/logo.png" alt="Logo Cathering">
+    </div>
+    <button class="hamburger" onclick="toggleMenu()"></button>
+
+    <div class="nav-links" id="navLinks">
+      <img src="img/logo/logo.png" alt="Logo Cathering">
+      <a href="javascript:void(0);" onclick="tampilkanSection('home')" class="home">Home</a>
+      <a href="javascript:void(0);" onclick="tampilkanSection('about')" class="about">Tentang Kami</a>
+      <a href="javascript:void(0);" onclick="tampilkanSection('product')" class="produk">Produk</a>
+      <a href="javascript:void(0);" onclick="tampilkanSection('info')" class="info">Info</a>
+      <a href="javascript:void(0);" onclick="tampilkanSection('testimoni')" class="testimoni">Testimoni</a>
+      <a href="javascript:void(0);" onclick="tampilkanSection('artikel')" class="artikel">Artikel</a>
+      <a href="javascript:void(0);" onclick="tampilkanSection('contact')" class="kontak">Kontak</a>
+    </div>
+  </nav>
+  <!-- Navigasi End -->
+
+  <!-- Section Home Star -->
+  <section id="home" class="active">
+  <h2 class="ornament-title">
+  <span class="icon">
+    <!-- Ranting daun kiri -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  Home
+  <span class="icon">
+    <!-- Ranting daun kanan (dibalik) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  </h2>
+       
+  <!-- Hero Section -->
+  <div id="hero-slider">
+    <div class="slide active" style="background-image: url('img/slide/menuSlide1.jpg');"></div>
+    <div class="slide" style="background-image: url('img/slide/menuSlide2.jpg');"></div>
+    <div class="slide" style="background-image: url('img/slide/menuslide3.jpg');"></div>
+    <div class="slide" style="background-image: url('img/slide/menuslide4.jpg');"></div>
+    <div class="slide" style="background-image: url('img/slide/menuslide5.jpg');"></div>
+
+    <!-- Teks & Tombol di atas slider -->
+    <div class="heroTeks">
+      <img src="img/slide/halal.png">
+      <h1>
+        Hidangan Lezat untuk Momen Spesial Anda
+      </h1>
+      <p>Catering profesional dengan cita rasa terbaik & layanan penuh perhatian</p>     
+      <a href="javascript:void(0);" onclick="tampilkanSection('product')">Lihat Menu</a>
+      
+    </div>
+  </div>
+
+  <!-- Perkenalan Singkat -->
+  <div class="tentang">
+    <h3 style="font-family: 'ArnoldBR', serif; color:#D7001B" >Tentang Dapur Pangeran Betawi</h3>
+    <p>Dapur Pangeran Betawi adalah layanan catering profesional di Jakarta yang menyajikan menu nusantara & internasional dengan cita rasa autentik,      bahan segar, dan pelayanan yang ramah.
+    Kami hadir untuk membuat setiap acara Anda menjadi momen istimewa.</p>
+  </div>
+
+  <!-- Menu Andalan -->
+  <div class="mPavorit">
+    <h3 style="font-family: 'ArnoldBR', serif;">Menu Favorit Kami :</h3>   
+    <div class="container">
+      
+      <div class="menu1">
+        <img src="img/produk/menuBesek.jpg" alt="Menu 1">
+        <h3>Nasi Besek</h3>
+        <p class="harga">Mulai Rp 35.000/Besek</p>
+      </div>
+      
+      <div class="menu2">       
+        <img src="img/produk/nasiKotak.jpg" alt="Menu 2">
+        <h3>Nasi Kotak</h3>
+        <p class="harga">Mulai Rp 20.000/Kotak</p>
+      </div>
+      
+      <div class="menu3">
+        <img src="img/produk/nasiTumpeng.jpg" alt="Menu 3">
+        <h3>Nasi Tumpeng</h3>
+        <p class="harga">Mulai Rp 500.000/tumpeng</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Keunggulan -->
+  <div class="mengapa">
+    <h3 style="font-family: 'ArnoldBR', serif;">Mengapa Memilih Kami?</h3>
+    <div class="container">
+      <div class="icon2">
+        <i class="fas fa-utensils"></i>
+        <p>Bahan Segar dan Halal</p>
+      </div>
+      <div class="icon2">
+        <i class="fas fa-user-tie"></i>
+        <p>Tim Profesional</p>
+      </div>
+      <div class="icon3">
+        <i class="fas fa-truck"></i>
+        <p>Pengiriman Tepat Waktu</p>
+      </div>
+      <div class="icon4">
+        <i class="fas fa-concierge-bell"></i>
+        <p>Menu Fleksibel</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimoni -->
+  <div class="testimonial">
+    <h3 style="font-family: 'ArnoldBR', serif;">Kata Mereka</h3>
+    <div class="container">
+      <div class="content1">
+        <i class="fa-solid fa-user"></i>
+        <p>"Makanannya enak, pelayanan cepat, semua tamu puas!"</p>
+        <small>- Ibu Rina, Jakarta</small>
+      </div>
+      <div class="content2">
+        <i class="fa-solid fa-user"></i>
+        <p>"Buffet pernikahan kami sukses, dekorasinya cantik & rapi."</p>
+        <small>- Andi & Sinta</small>
+      </div>
+      <div class="content3">
+        <i class="fa-solid fa-user"></i>
+        <p>"Harga bersahabat, rasa mewah!"</p>
+        <small>- Bapak Yusuf</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="mitraKami">
+    <p>Mitra Kami</p>
+      <img src="img/produk/partner.jpg" width="100%">
+    </p>
+  </div>
+
+  <!-- CTA Penutup -->
+  <div class="cta">
+    <h3 style="font-family: 'ArnoldBR', serif; color: #D7001B;">Siap Memesan?</h3>
+    <p>Buat acara Anda lebih istimewa bersama Dapur Pangeran Betawi</p>
+    <a href="https://wa.me/6287781935781" target="_blank">Hubungi Kami via WhatsApp</a>
+  </div>
+  </section> 
+ <!-- Section Home End -->
+
+ <!-- Section about Star -->
+  <section id="about" class="about">
+  <h2 class="ornament-title">
+    <span class="icon">
+    <!-- Ranting daun kiri -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  Tentang Kami
+  <span class="icon">
+    <!-- Ranting daun kanan (dibalik) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  </h2>
+        
+   <!-- Teks Tentang Kami -->
+    <div class="content">
+      <p>
+        Dapur Pangeran Betawi berdiri sejak tahun 2015 dan telah melayani ratusan acara pernikahan, ulang tahun, rapat kantor, hingga event besar di Jakarta dan sekitarnya. 
+        Kami percaya bahwa makanan bukan hanya soal rasa, tetapi juga pengalaman yang membuat setiap momen berkesan.
+      </p>
+      <p >
+        Semua menu kami diolah dari bahan segar, halal, dan berkualitas tinggi. Tim kami berkomitmen memberikan pelayanan terbaik, mulai dari perencanaan menu, pengolahan, hingga pengantaran tepat waktu.
+      </p>
+      <ul>
+        <li>Melayani berbagai jenis paket catering</li>
+        <li>Menu Nusantara & Internasional</li>
+        <li>Harga fleksibel sesuai budget</li>
+        <li>Gratis konsultasi menu untuk acara</li>
+      </ul>
+    </div>
+    
+    <!-- Gambar Produk -->
+    <div style="flex: 1 1 500px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 10px;">
+      <img src="img/produk/nasiKotak.jpg" alt="Nasi Kotak Premium" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <img src="img/produk/nasiBesek.jpg" alt="Buffet Pernikahan" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <img src="img/produk/nasiTumpeng.jpg" alt="Snack Box" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <img src="img/produk/menuPernikahan.jpg" alt="Dessert Cantik" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+    </div>
+
+    <div class="mitraKami">
+      <p>Mitra Kami</p>
+        <img src="img/produk/partner.jpg" width="100%">
+      </p>
+    </div>
+
+  </div>
+  </section>
+  <!-- Section About End -->
+  
+  <section id="product" class="product" style="padding:10px;">
+        <h2 class="ornament-title">
+  <span class="icon">
+    <!-- Ranting daun kiri -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  Produk Kami
+  <span class="icon">
+    <!-- Ranting daun kanan (dibalik) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  </h2>
+    
+  <div class="product-grid">
+  <!-- produk1 -->
+  <div class="product-card">
+    <div class="image-wrapper">
+      <img src="img/produk/ayamBakar.jpg" alt="Nasi Kotak ayam Bakar">
+    </div>
+    <h3 style="margin-top:10px;">Nasi Kotak Ayam Bakar</h3>
+    
+    <div style="margin-top: 10px;" class="price" data-price="35000">Rp 35.000/Kotak</div>
+    <button class="detail-btn" 
+    data-name="Nasi Kotak Ayam Bakar" 
+    data-img="img/produk/ayamBakar.jpg" 
+    data-desc="Menu Nasi Kotak Dapur Pangeran Betawi adalah menu makanan yang lezat dan lengkap. Menu ini terdiri dari berbagai macam hidangan yang cocok dinikmati sebagai makan siang atau makan malam atau acara-acara tertentu."> 
+    DETIL
+  </button> 
+
+    <button class="order-btn" 
+      data-name="Nasi Kotak Ayam Bakar" 
+      data-price="35000">
+      ORDER
+    </button>
+  </div>
+  
+  <!-- produk2 -->
+  <div class="product-card">
+    <div class="image-wrapper">
+      <img src="img/produk/dagingSemur.jpg" alt="Nasi Kotak Semur Daging">
+    </div>
+    <h3 style="margin-top:10px;">Nasi Kotak Semur Daging</h3>
+    
+    <div style="margin-top: 10px;" class="price" data-price="40000">Rp 40.000/Box</div>
+    <button class="detail-btn" 
+      data-name="Nasi Kotak Semur Daging" 
+      data-img="img/produk/dagingSemur.jpg" 
+      data-desc="Menu Nasi Kotak Dapur Pangeran Betawi adalah menu makanan yang lezat dan lengkap. Menu ini terdiri dari berbagai macam hidangan yang cocok dinikmati sebagai makan siang atau makan malam atau acara-acara tertentu."> 
+      DETIL
+    </button>
+
+    <button class="order-btn" 
+      data-name="Nasi Kotak Semur Daging" 
+      data-price="40000">
+      ORDER
+    </button>
+  </div>
+  
+  <!-- produk3 -->
+  <div class="product-card">
+    <div class="image-wrapper">
+      <img src="img/produk/ayamKremes.jpg" alt="Nasi Kotak ayam Krenmes">
+    </div>
+    <h3 style="margin-top:10px;">Nasi Kotak Ayam Kremes</h3>
+    
+    <div style="margin-top:10px;"class="price" data-price="50000">Rp 25.000/Box</div>
+    <button class="detail-btn" 
+      data-name="Nasi Kotak Ayam Kremes" 
+      data-img="img/produk/ayamKremes.jpg" 
+      data-desc="Menu Nasi Kotak Dapur Pangeran Betawi adalah menu makanan yang lezat dan lengkap. Menu ini terdiri dari berbagai macam hidangan yang cocok dinikmati sebagai makan siang atau makan malam atau acara-acara tertentu."> 
+      DETIL
+    </button>
+
+    <button class="order-btn" 
+      data-name="Nasi Kotak Ayam Kremes" 
+      data-price="50000">
+      ORDER
+    </button>
+  </div>
+
+    <!-- produk4 -->
+    <div class="product-card">
+      <div class="image-wrapper">
+        <img src="img/produk/ayamRendang.jpg" alt="Nasi Kotak ayam Krenmes">
+      </div>
+      <h3 style="margin-top:10px;">Nasi Kotak Ayam Rendang</h3>
+      
+      <div style="margin-top:10px;"class="price" data-price="50000">Rp 25.000/Box</div>
+      <button class="detail-btn" 
+      data-name="Nasi Kotak Ayam Rendang" 
+      data-img="img/produk/ayamRendang.jpg" 
+      data-desc="Menu Nasi Kotak Dapur Pangeran Betawi adalah menu makanan yang lezat dan lengkap. Menu ini terdiri dari berbagai macam hidangan yang cocok dinikmati sebagai makan siang atau makan malam atau acara-acara tertentu."> 
+      DETIL
+    </button>
+
+      <button class="order-btn" 
+        data-name="Nasi Kotak Ayam Rendang" 
+        data-price="25000">
+        ORDER
+      </button>
+    </div>
+
+  <!-- produk5 -->
+  <div class="product-card">
+    <div class="image-wrapper">
+      <img src="img/produk/menuBesek.jpg" alt="Nasi Besek">
+    </div>
+    <h3 style="margin-top:10px;">Nasi Besek</h3>
+    
+    <div style="margin-top:10px;"class="price" data-price="50000">Rp 40.000/Besek</div>
+    <button class="detail-btn" 
+      data-name="Nasi Besek" 
+      data-img="img/produk/ayamBakar.jpg" 
+      data-desc="Menu Nasi Besek Dapur Pangeran Betawi adalah menu makanan dikemas besek. Menu ini terdiri dari berbagai macam hidangan yang cocok acara tahlilan , maulid, khitanan dan acara pernikahan. menu bisa di pesan sesuai selera."> 
+      DETIL
+    </button> 
+
+    <button class="order-btn" 
+      data-name="Nasi Besek" 
+      data-price="40000">
+      ORDER
+    </button>
+  </div>
+
+  <!-- produk6 -->
+  <div class="product-card">
+    <div class="image-wrapper">
+      <img src="img/produk/menuPernikahan.jpg" alt="Menu Prasmanan">
+    </div>
+    <h3 style="margin-top:10px;">Prasmanan Pernikahan</h3>
+    
+    <div style="margin-top:10px;"class="price" data-price="10000000">Rp 10.000.000/Acara</div>
+    <button class="detail-btn" 
+    data-name="Menu Prasmanan" 
+    data-img="img/produk/menuPernikahan.jpg" 
+    data-desc="Menu Nasi Prasmanan Dapur Pangeran Betawi adalah menu makanan yang lezat dan lengkap. Menu ini cocok acara pernikahan, khitanan dan acara pernikihan, menu bisa di pesan sesuai selera."> 
+    DETIL
+  </button>
+
+    <button class="order-btn" 
+      data-name="Menu Prasmanan" 
+      data-price="10000000">
+      ORDER
+    </button>
+  </div>
+  </div>
+  </section>
+  <!-- Produk end -->
+  
+  <!-- section info start-->
+  <section class="info" id="info">
+  <h2 class="ornament-title">
+  <span class="icon">
+    <!-- Ranting daun kiri -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  Pertanyaan Anda?
+  <span class="icon">
+    <!-- Ranting daun kanan (dibalik) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+</h2>
+  <div class="accordion">                      
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Bagaimana cara memesan?
+      <span class="arrow">&#9662;</span>
+    </button>
+    <div class="accordion-content">
+      <p>
+        Anda dapat memesan dengan cara mengklik tombol order maka pesanan Anda akan terinput otomtis di form pembelian, edit jumlah beli jika memesan lebih dari 5, jika disudah yakin tekan tombol kirim ke WhatsApp. Tim kami akan menghubungi Anda untuk konfirmasi pesanan dan detail acara.
+      </p>
+    </div>
+  </div>
+  
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Apakah bisa memesan secara custom?, dimana menu di tentukan pembeli.
+      <span class="arrow">&#9662;</span>
+    </button>
+    <div class="accordion-content">
+      <p>
+        Untuk sementara Anda tidak dapat memesan secara custom, kami hanya membuatkan menu yang dudah terdaftar.
+      </p>
+    </div>
+  </div>
+  
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Apakah menerima pesanan di luar kota?
+      <span class="arrow">&#9662;</span>
+    </button>
+    <div class="accordion-content">
+      <p>
+        Ya, kami melayani pesanan di luar kota dengan ketentuan khusus.  
+        Silakan hubungi kami untuk detail ongkos kirim dan waktu pengiriman.
+      </p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Metode pembayaran apa saja yang tersedia?
+      <span class="arrow">&#9662;</span>
+    </button>
+    <div class="accordion-content">
+      <p>
+        Kami menerima transfer bank, e-wallet (OVO, GoPay, Dana), dan pembayaran tunai.  
+        DP minimal 50% diperlukan untuk konfirmasi pesanan.
+      </p>
+    </div>
+  </div>
+  
+   <div class="accordion-item">
+    <button class="accordion-header">
+      Apakah perlu bukti pembayaran?
+      <span class="arrow">&#9662;</span>
+    </button>
+    <div class="accordion-content">
+      <p>ya, kami perlu bukti pembayaran baik bukti DP maupun pelunasan. Bukti DP dan pelunasan di kirim via whatsapp resmi kami dan dilakuan sebelum pengiriman pesanan
+      </p>
+    </div>
+  </div>
+  
+    <div class="accordion-item">
+    <button class="accordion-header">
+      Bagaimana cara pembayaran metode tunai atau COD?
+      <span class="arrow">&#9662;</span>
+    </button>
+    <div class="accordion-content">
+      <p>
+        Pembayaran motode tunai atau cod hanya bisa di lakukan langsung di dapur pangeran
+      </p>
+    </div>
+  </div>
+  
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Kapan saya harus melakukan pesanan?
+      <span class="arrow">&#9662;</span>
+    </button>
+    <div class="accordion-content">
+      <p>
+        Pemesan sebaiknya dilakukan 3 hari sebelumnya, agar mendapat ketersediaan jadwal pengantaran melalui tim Dapur Pangeran. Jika pengiriman penuh, kami akan berikan alternative pengantaran menggunakan pihak ketiga
+
+      </p>
+    </div>
+  </div>
+  
+  <div class="accordion-item">
+    <button class="accordion-header">
+      Apakah ada biaya pengiriman?
+      <span class="arrow">&#9662;</span>
+    </button>
+    <div class="accordion-content">
+      <p>
+        Biaya pengiriman gratis, namun tergantung area pengiriman dan jumlah pesanan
+      </p>
+    </div>
+  </div>
+  
+   <div class="accordion-item">
+    <button class="accordion-header">
+      Apakah pesanan bisa dibatalkan?
+      <span class="arrow">&#9662;</span>
+    </button>
+    <div class="accordion-content">
+      <p>
+        Ya bisa, dengan ketentuan berikut :<br>
+        Perubahan atau pembatalan pesanan tidak dapat dilakukan pada hari H <br>Pembatalan H-1 s/d H-2 akan dikenakan charge 50% dari total invoice<br>Pembatalan jauh hari setelah Down Payment (DP) diterima akan dikenakan charge 10% dari total invoice
+      </p>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3 style="font-family: 'ArnoldBR', serif; color: #D7001B;">Jika pertanyaa Anda tidak ada disini, hubungi :</h3>
+
+    <a href="https://wa.me/6287781935781" target="_blank">Hubungi Kami via WhatsApp</a>
+  </div>
+  
+  </div>
+  </section>
+  <!-- section info End -->
+
+  <!-- section testiimoni star -->
+  <section id="testimoni" class="testimoni" style="padding-bottom: 20px;">
+  <h2 class="ornament-title">
+  <span class="icon">
+    <!-- Ranting daun kiri -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  Testimoni
+  <span class="icon">
+    <!-- Ranting daun kanan (dibalik) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+</h2>
+    
+<div class="komentar-container" id="komentarList"></div>
+<button id="beriKomentarBtn">Beri Komentar</button>
+
+<!-- Modal -->
+<div id="modalKomentar">
+  <div class="modal-content">
+    <span class="close" onclick="tutupModal()">&times;</span>
+    <h3>Tulis Komentar</h3>
+    <input type="text" id="namaInput" placeholder="Nama Anda">
+    <textarea id="komentarInput" placeholder="Tulis komentar..." rows="3"></textarea>
+    <select id="bintangInput">
+      <option value="1">⭐</option>
+      <option value="2">⭐⭐</option>
+      <option value="3">⭐⭐⭐</option>
+      <option value="4">⭐⭐⭐⭐</option>
+      <option value="5" selected>⭐⭐⭐⭐⭐</option>
+    </select>
+    <button id="kirimKomentarBtn">Kirim ke WhatsApp</button>
+  </div>
+  </div>
+ </section>
+ <!-- section testimoni End -->
+
+  <!-- section artikel star -->
+  <section id="artikel" style="padding:0 25px 25px 25px;">
+        <h2 class="ornament-title">
+  <span class="icon">
+    <!-- Ranting daun kiri -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  Artikel
+  <span class="icon">
+    <!-- Ranting daun kanan (dibalik) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+</h2>
+    <!-- Menu Tab -->
+    <div class="tab-menu">
+      <button class="tab-link active" data-tab="tab1">Tips Memilih Menu</button>
+      <button class="tab-link" data-tab="tab2">Persiapan Acara</button>
+      <button class="tab-link" data-tab="tab3">Kisah Pelanggan</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content active" id="tab1">
+      <div class="article">
+
+        <img src="img/artikel/tipsMenu.PNG" alt="Tips Memilih Menu" class="img-left">
+        <p class="short-text">
+          <b>Memilih menu catering yang tepat memerlukan pertimbangan matang agar sesuai dengan tema acara, anggaran, dan preferensi tamu.</b><br><br>
+
+          Berikut adalah beberapa tips yang bisa Anda ikuti:<br><br>
+
+          <b>1. Tentukan Tema Acara dan Anggaran:</b><br>
+          <b>Pahami Tema:</b><br>
+          Sesuaikan menu dengan tema acara. Misalnya, jika tema tradisional, pilih hidangan daerah yang sesuai. Jika tema modern, pilih menu yang lebih variatif dan fleksibel. <br>
+          Tetapkan Anggaran:<br>
+          Tentukan anggaran catering sejak awal untuk mempermudah pemilihan vendor dan menu yang sesuai.<br> <br>
+
+          <b>2. Pilih Vendor Catering Terpercaya:</b><br>
+          <b>Cari Referensi:</b><br>
+          Minta rekomendasi dari teman, keluarga, atau rekan kerja yang pernah menggunakan jasa catering.<br> 
+          <b>Baca Ulasan:</b><br>
+          Cek ulasan dan testimoni dari pelanggan sebelumnya di media sosial atau website vendor. <br>
+          <b>Lihat Portofolio:</b><br>
+          Periksa foto dan deskripsi menu yang pernah disediakan untuk memastikan kualitas dan variasi.<br><br>
+
+          <b>3. Sesuaikan Menu dengan Kebutuhan:</b><br>
+          <b>Jumlah Tamu:</b><br>
+          Perhitungkan jumlah tamu undangan dan lebihkan sedikit untuk antisipasi tamu tak terduga. 
+          Preferensi Tamu:<br>
+          Pertimbangkan selera tamu yang beragam, termasuk makanan halal, vegetarian, atau diet khusus.<br> 
+          <b>Variasi Menu:</b><br>
+          Sediakan pilihan menu yang bervariasi agar tamu tidak bosan dan dapat memilih sesuai selera. <br><br>
+
+          <b>4. Lakukan Food Tasting:</b><br>
+          <b>Pentingnya Food Tasting:</b><br>
+          Jangan lewatkan sesi food tasting untuk mencicipi langsung kualitas rasa dan tampilan hidangan.<br>
+          <b>Evaluasi:</b><br>
+          Perhatikan rasa, tekstur, dan presentasi makanan. Bandingkan dengan vendor lain jika perlu. <br>
+        </p>
+
+        <p class="full-text" style="display: none;">
+          Memilih menu catering yang tepat memerlukan pertimbangan matang agar sesuai dengan tema acara, anggaran, dan preferensi tamu. Berikut adalah beberapa tips yang bisa Anda ikuti:<br><br>
+
+          <b>1. Tentukan Tema Acara dan Anggaran:</b><br>
+          <b>Pahami Tema:</b><br>
+          Sesuaikan menu dengan tema acara. Misalnya, jika tema tradisional, pilih hidangan daerah yang sesuai. Jika tema modern, pilih menu yang lebih variatif dan fleksibel. <br>
+          Tetapkan Anggaran:<br>
+          Tentukan anggaran catering sejak awal untuk mempermudah pemilihan vendor dan menu yang sesuai.<br> <br>
+
+          <b>2. Pilih Vendor Catering Terpercaya:</b><br>
+          <b>Cari Referensi:</b><br>
+          Minta rekomendasi dari teman, keluarga, atau rekan kerja yang pernah menggunakan jasa catering.<br> 
+          <b>Baca Ulasan:</b><br>
+          Cek ulasan dan testimoni dari pelanggan sebelumnya di media sosial atau website vendor. <br>
+          <b>Lihat Portofolio:</b><br>
+          Periksa foto dan deskripsi menu yang pernah disediakan untuk memastikan kualitas dan variasi.<br><br> 
+
+          <b>3. Sesuaikan Menu dengan Kebutuhan:</b><br>
+          <b>Jumlah Tamu:</b><br>
+          Perhitungkan jumlah tamu undangan dan lebihkan sedikit untuk antisipasi tamu tak terduga. 
+          Preferensi Tamu:<br>
+          Pertimbangkan selera tamu yang beragam, termasuk makanan halal, vegetarian, atau diet khusus.<br> 
+          <b>Variasi Menu:</b><br>
+          Sediakan pilihan menu yang bervariasi agar tamu tidak bosan dan dapat memilih sesuai selera. <br><br>
+
+          <b>4. Lakukan Food Tasting:</b><br>
+          <b>Pentingnya Food Tasting:</b><br>
+          Jangan lewatkan sesi food tasting untuk mencicipi langsung kualitas rasa dan tampilan hidangan.<br>
+          <b>Evaluasi:</b><br>
+          Perhatikan rasa, tekstur, dan presentasi makanan. Bandingkan dengan vendor lain jika perlu. <br><br>
+                
+          <b>5. Perhatikan Pelayanan dan Detail:</b><br>
+          <b>Profesionalisme:</b><br>
+          Pilih vendor yang responsif, komunikatif, dan memberikan pelayanan yang baik.<br>
+          <b>Detail Layanan:</b><br>
+          Pastikan semua detail layanan, seperti waktu pengiriman, dekorasi, dan peralatan, sudah jelas dan disepakati.<br><br>
+
+          <b>6. Pertimbangkan Logistik dan Peralatan:</b><br>
+          Ketersediaan: Pastikan vendor memiliki peralatan yang cukup untuk acara Anda. <br>
+          <b>Pengaturan:</b><br>
+          Diskusikan tata letak penyajian makanan, seperti prasmanan atau gubukan, agar sesuai dengan konsep acara.<br>
+
+          <b>7. Perhatikan Kontrak:</b><br>
+          <b>Detail Perjanjian:</b><br>
+          Baca dengan teliti semua poin dalam kontrak, termasuk harga, menu, waktu pengiriman, dan pembatalan.<br>
+          <b>Kesepakatan Tertulis:</b><br>
+          Pastikan semua kesepakatan tertulis untuk menghindari kesalahpahaman di kemudian hari.
+      </p>
+      </div>
+      <a href="#" class="read-more">Baca Selengkapnya >></a>
+    </div>
+
+    <div class="tab-content" id="tab2">
+      <div class="article">
+        <img src="img/artikel/persiapanMenu.jpg" alt="Persiapan Acara" class="img-left">
+        <p class="short-text">
+          Ada banyak pertimbangan saat memilih menu untuk sebuah acara. Hal pertama yang perlu dipertimbangkan adalah anggaran. Ketahui berapa banyak yang harus Anda keluarkan sebelum bertemu dengan katering. Katering kampus akan memberikan nilai terbaik untuk uang Anda .<br><br>
+
+          Departemen katering sudah familiar dengan semua gedung dan memiliki menu yang sangat beragam. Jika Anda ragu dengan pilihan makanan, manajer katering akan memberikan rekomendasi berdasarkan anggaran dan pengetahuan Anda tentang preferensi makanan tamu. Campus Catering juga akan menyediakan taplak meja dan hiasan meja jika diminta. Pastikan untuk memeriksa biaya yang mungkin terkait dengan layanan tambahan mereka.<br><br>
+          
+          Jika acara Anda diadakan di luar kampus, Anda perlu menjadwalkan pertemuan dengan pihak katering dan merencanakan menu. Jika pihak katering menyediakan sampel atau uji rasa, manfaatkan layanan tersebut. Jika pihak katering tidak menyediakan layanan tersebut, pastikan Anda memeriksa referensi atau rekomendasi dari profesional/klien lain.<br><br>
+          
+          Ada beberapa pilihan saat merencanakan hidangan. Anda bisa memilih hidangan berlapis (biasanya yang paling murah) atau hidangan utama ganda berlapis yang lebih mahal tetapi mengurangi risiko tamu Anda tidak menyukai hidangan yang telah dipilih sebelumnya. Karena menyajikan hidangan berlapis lebih mudah bagi staf pelayan, hal ini memberi perencana acara kendali lebih besar atas waktu dalam jadwal acara malam itu.<br><br>
+          
+          Pilihan makan lainnya termasuk prasmanan dan resepsi keliling. Kedua pilihan ini biasanya lebih mahal daripada hidangan utama, tetapi memberikan tamu Anda beberapa pilihan hidangan utama. Prasmanan dan resepsi keliling memberikan kesempatan bagi tamu untuk bergerak dan mengobrol dengan orang lain yang mungkin tidak duduk di meja mereka. Namun, pilihan makan seperti ini lebih memakan waktu. Jadi, pastikan waktu tambahan tersebut sudah termasuk dalam rencana acara Anda.<br><br>
+          
+          Hors d'oeuvres cocok untuk kelompok kecil atau saat tidak ada acara formal. Namun, biaya per porsinya bisa membengkak dengan cepat. Jika makan malam akan disajikan setelah resepsi koktail, sajikan enam hingga delapan hors d'oeuvres per orang. Jika hors d'oeuvres disajikan untuk makan malam, sajikan lima belas hingga dua puluh potong per orang dan sebaiknya berupa campuran hors d'oeuvres panas dan dingin yang "berat".<br><br>
+          
+          Jika anggaran menjadi pertimbangan, adakan acara di luar jam makan. Menyajikan kue kering atau cupcake dan punch lebih hemat daripada makan lengkap.<br><br>
+          
+        </p>
+        <p class="full-text" style="display: none;">
+          Ada banyak pertimbangan saat memilih menu untuk sebuah acara. Hal pertama yang perlu dipertimbangkan adalah anggaran. Ketahui berapa banyak yang harus Anda keluarkan sebelum bertemu dengan katering. Katering kampus akan memberikan nilai terbaik untuk uang Anda .<br><br>
+
+          Departemen katering sudah familiar dengan semua gedung dan memiliki menu yang sangat beragam. Jika Anda ragu dengan pilihan makanan, manajer katering akan memberikan rekomendasi berdasarkan anggaran dan pengetahuan Anda tentang preferensi makanan tamu. Campus Catering juga akan menyediakan taplak meja dan hiasan meja jika diminta. Pastikan untuk memeriksa biaya yang mungkin terkait dengan layanan tambahan mereka.<br><br>
+
+          Jika acara Anda diadakan di luar kampus, Anda perlu menjadwalkan pertemuan dengan pihak katering dan merencanakan menu. Jika pihak katering menyediakan sampel atau uji rasa, manfaatkan layanan tersebut. Jika pihak katering tidak menyediakan layanan tersebut, pastikan Anda memeriksa referensi atau rekomendasi dari profesional/klien lain.<br><br>
+
+          Ada beberapa pilihan saat merencanakan hidangan. Anda bisa memilih hidangan berlapis (biasanya yang paling murah) atau hidangan utama ganda berlapis yang lebih mahal tetapi mengurangi risiko tamu Anda tidak menyukai hidangan yang telah dipilih sebelumnya. Karena menyajikan hidangan berlapis lebih mudah bagi staf pelayan, hal ini memberi perencana acara kendali lebih besar atas waktu dalam jadwal acara malam itu.<br><br>
+
+          Pilihan makan lainnya termasuk prasmanan dan resepsi keliling. Kedua pilihan ini biasanya lebih mahal daripada hidangan utama, tetapi memberikan tamu Anda beberapa pilihan hidangan utama. Prasmanan dan resepsi keliling memberikan kesempatan bagi tamu untuk bergerak dan mengobrol dengan orang lain yang mungkin tidak duduk di meja mereka. Namun, pilihan makan seperti ini lebih memakan waktu. Jadi, pastikan waktu tambahan tersebut sudah termasuk dalam rencana acara Anda.<br><br>
+
+          Hors d'oeuvres cocok untuk kelompok kecil atau saat tidak ada acara formal. Namun, biaya per porsinya bisa membengkak dengan cepat. Jika makan malam akan disajikan setelah resepsi koktail, sajikan enam hingga delapan hors d'oeuvres per orang. Jika hors d'oeuvres disajikan untuk makan malam, sajikan lima belas hingga dua puluh potong per orang dan sebaiknya berupa campuran hors d'oeuvres panas dan dingin yang "berat".<br><br>
+
+          Jika anggaran menjadi pertimbangan, adakan acara di luar jam makan. Menyajikan kue kering atau cupcake dan punch lebih hemat daripada makan lengkap.<br><br>
+
+          Saat memilih hidangan utama, pertimbangkan secara khusus pola makan tamu Anda. Pastikan tersedia pilihan vegetarian dan pertimbangkan keyakinan agama. Misalnya, jika acara Anda diadakan pada hari Jumat selama masa Prapaskah, pastikan ikan ada di menu. Selain itu, dalam beberapa budaya, menyajikan daging babi dianggap tidak sopan. Berhati-hatilah saat mempertimbangkan kebutuhan tamu Anda, tetapi jangan biarkan beberapa orang mendikte pilihan makanan untuk orang lain. Untuk menghindari masalah seperti ini, selalu cantumkan pada undangan – “Setiap penyandang disabilitas atau alergi makanan yang membutuhkan akomodasi khusus harus menghubungi XXX-XXX-XXXX setidaknya 7 hari sebelum acara.”<br><br>
+
+          Setelah memilih hidangan, Anda akan menerima Banquet Event Order (BEO). BEO akan mencantumkan menu beserta petunjuk khusus dan waktu layanan. Anda juga harus memberikan perkiraan jumlah tamu yang akan datang. Jumlah ini akan menentukan bagaimana katering akan menagih biaya hidangan. Lebih aman memulai dengan jumlah tamu yang lebih sedikit dan menambah jumlahnya seiring bertambahnya daftar tamu daripada memulai dengan jumlah tamu yang banyak dan tidak memenuhi harapan. Ingat, sebagian besar katering akan meminta konfirmasi jumlah tamu yang dijamin 72 jam sebelum acara. Pastikan Anda memenuhi tenggat waktu dan memastikan jumlah hidangan yang tepat.<br><br>
+        
+        </p>
+      </div>
+      <a href="#" class="read-more">Baca Selengkapnya</a>
+    </div>
+
+    <div class="tab-content" id="tab3">
+      <div class="article">
+        <img src="img/artikel/pelanggan.jpg" alt="Kisah Pelanggan" class="img-left">
+        <p class="short-text">
+          Ibu Rina dari Jakarta memesan catering kami untuk pesta ulang tahun anaknya.  
+          Semua tamu memuji rasa makanan yang lezat dan pelayanan yang ramah...
+        </p>
+        <p class="full-text" style="display: none;">
+
+        </p>
+      </div>
+      <a href="#" class="read-more">Baca Selengkapnya</a>
+    </div>
+  </div> 
+
+  <!-- Produk Rekomendasi -->
+  <div class="produk-rekomendasi">
+    <h3 style="text-align:center; color:#D7001B; margin-top:20px; font-family:'ArnoldBR', serif;">
+      Produk Rekomendasi
+    </h3>
+    <div id="randomProductContainer" class="product-grid"></div>
+  </div>
+
+</section>
+<!-- section artikel End -->
+
+<!-- section kontak start -->
+  <section id="contact" class="kontak" style="background: #fff7f7; padding:15px;">
+        <h2 class="ornament-title">
+  <span class="icon">
+    <!-- Ranting daun kiri -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  Kontak
+  <span class="icon">
+    <!-- Ranting daun kanan (dibalik) -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="transform: scaleX(-1);" viewBox="0 0 100 40" width="70" height="35" fill="none" stroke="#2e7d32" stroke-width="2">
+      <path d="M95 35c-15-15-40-20-60-10S10 40 5 35" stroke-linecap="round"/>
+      <path d="M20 30c-2-5 5-12 10-8s-4 8-10 8z" fill="#2e7d32"/>
+      <path d="M35 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M50 20c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+      <path d="M65 25c-3-4 4-10 8-6s-3 7-8 6z" fill="#2e7d32"/>
+    </svg>
+  </span>
+  </h2>
+    <p>
+      Jl. Petir utama no. 50 Rt 003/ Rw 03 Kel Petir, Cipodoh - Tangerang 15147 Banten- Indonesia <br>Telp : 087781935781, E-mail : nurhasan.achan@gmail.com
+    </p>
+  </div>
+
+  <div class="contact-container">    
+    <!-- Peta Lokasi -->
+    <div class="contact-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.5833594145306!2d106.71112199999999!3d-6.186471699999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9ce227fc911%3A0xddf13f7fb9595148!2sNani%20Chesia%20Store!5e0!3m2!1sid!2sid!4v1750150786599!5m2!1sid!2sid"
+        width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Form WhatsApp -->
+    <div class="contact-form">
+      <h3>Mau tanya-tanya ?</h3>
+      <form id="waForm">
+        <label>Nama *</label>
+        <input type="text" id="nama" required>
+
+        <label>No. Telepon *</label>
+        <input type="tel" id="telepon" required>
+
+        <label>Email *</label>
+        <input type="email" id="email" required>
+
+        <label>Pesan *</label>
+        <textarea id="pesan" rows="4" required></textarea>
+
+        <button type="submit">Kirim via WhatsApp</button>
+      </form>
+    </div>
+
+  </div>
+  </section>
+  <!-- section kontak end -->
+ 
+  
+  <!-- section footer start -->
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-overlay"></div>
+    <div class="footer-content">
+      <div class="footer-nav">
+        <h3>Menu :</h3>
+        <ul>
+          <li><a href="javascript:void(0);" onclick="tampilkanSection('home')">Beranda</a></li>
+          <li><a href="javascript:void(0);" onclick="tampilkanSection('about')">Tentang</a></li>
+          <li><a href="javascript:void(0);" onclick="tampilkanSection('testimoni')">Testimoni</a></li>
+          <li><a href="javascript:void(0);" onclick="tampilkanSection('contact')">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-address">
+        <h3>Alamat :</h3>
+        <p>Jl. Mawar No. 123, Jakarta, Indonesia</p>
+        <p>Telp: (021) 12345678</p>
+        <p>Email: info@example.com</p>
+      </div>
+
+      <div class="footer-social">
+        <h3>Ikuti Kami :</h3>
+        <div class="social-icons">
+          <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i>Facebook</a>
+          <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+          <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+          <a href="#"><i class="fab fa-linkedin-in"></i>Linkedin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- section footer End -->
+
+  <div class="footer-credit">
+    <p>&copy; 2025 dapurpangeran.com. Design by : ❤️ Nurhasan.</p>
+  </div>
+
+  <!-- tombol scroll atas -->
+  <button id="scrollTopBtn" onclick="scrollToTop()" title="Kembali ke atas"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- Modal Detil Produk -->
+<div id="detailModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeDetailModal()">&times;</span>
+    <img id="detailImage" src="" alt="Detil Produk" style="width:100%; border-radius:8px; margin-bottom:15px;">
+    <h3 id="detailTitle" style="color:#D7001B; font-family:'ArnoldBR', serif; text-align:center;"></h3>
+    <p id="detailDesc" style="line-height:1.6; color:#333;"></p>
+  </div>
+</div>
+
+
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Form Pembelian</h2>
+      
+      <div class="product-info">
+        <h3 id="modalProductName">Produk</h3>
+        <p id="modalProductPrice">Harga: Rp 0</p>
+      </div>
+      
+      <form id="orderForm">
+        <div class="form-group">
+          <label style="font-size: 11px;" for="quantity" class="required">Jumlah Beli</label>
+
+          <input type="number" id="quantity" name="quantity" min="5" placeholder="Pilih jumlah beli, minimal 5 box" required>
+        </div>
+        
+        <div class="form-group">
+          <label style="font-size: 11px;" for="total" class="required" >Total Pembayaran</label>
+          <input style="padding: 5px;" type="text" id="total" name="total" readonly>
+        </div>
+        
+        <div class="form-group">
+          <label style="font-size: 11px;" for="name" class="required" >Nama Lengkap</label>
+          <input style="padding: 5px;" type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label style="font-size: 11px;" for="phone" class="required">Nomor Telepon</label>
+          <input style="padding: 5px;" type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form-group">
+          <label style="font-size: 11px;" for="address" class="required">Alamat Lengkap</label>
+          <textarea id="address" name="address" rows="2" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label style="font-size: 11px;" for="notes">(opsional)</label>
+          <textarea id="notes" name="notes" rows="4" placeholder="tulis disni jiki ada perubahan menu "></textarea>
+        </div>
+        
+        <button type="submit" id="btnSubmit" class="btn-whatsapp" disabled>
+          <i class="fab fa-whatsapp"></i> Kirim ke WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+  
+
+
+  <script src="scripts.js"></script>
+</body>
+</html>
